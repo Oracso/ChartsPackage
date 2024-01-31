@@ -7,28 +7,28 @@
 
 import Foundation
 
-struct ChartItem: Identifiable {
+public struct ChartItem: Identifiable {
     let key: String
     let value: Double
-    var id: String { key }
+    public var id: String { key }
 }
 
 
 
-struct ChartData {
+public struct ChartData {
     let xAxis: String
     let yAxis: String
     let chartItems: [ChartItem]
 }
 
 
-struct MultipleChartData: Identifiable {
+public struct MultipleChartData: Identifiable {
     var name: String
-    var id: String { name }
+    public var id: String { name }
     var chartData: ChartData
 }
 
-extension ChartData {
+public extension ChartData {
     static let example = ChartData(
         xAxis: "time",
         yAxis: "attempts",
