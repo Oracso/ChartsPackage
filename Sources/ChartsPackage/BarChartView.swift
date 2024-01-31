@@ -8,11 +8,15 @@
 import SwiftUI
 import Charts
 
-struct BarChartView: View {
+public struct BarChartView: View {
+    public init(chartData: ChartData) {
+        self.chartData = chartData
+    }
+    
     
     let chartData: ChartData
     
-    var body: some View {
+    public var body: some View {
         
         Chart {
             ForEach(chartData.chartItems) { item in
