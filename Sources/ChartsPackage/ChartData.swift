@@ -8,6 +8,11 @@
 import Foundation
 
 public struct ChartItem: Identifiable {
+    public init(key: String, value: Double) {
+        self.key = key
+        self.value = value
+    }
+    
     let key: String
     let value: Double
     public var id: String { key }
@@ -16,6 +21,12 @@ public struct ChartItem: Identifiable {
 
 
 public struct ChartData {
+    public init(xAxis: String, yAxis: String, chartItems: [ChartItem]) {
+        self.xAxis = xAxis
+        self.yAxis = yAxis
+        self.chartItems = chartItems
+    }
+    
     let xAxis: String
     let yAxis: String
     let chartItems: [ChartItem]
@@ -23,6 +34,11 @@ public struct ChartData {
 
 
 public struct MultipleChartData: Identifiable {
+    public init(name: String, chartData: ChartData) {
+        self.name = name
+        self.chartData = chartData
+    }
+    
     var name: String
     public var id: String { name }
     var chartData: ChartData
